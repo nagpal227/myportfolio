@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parv — Portfolio (Light Cyber)</title>
+  <link rel="stylesheet" href="light-cyber.css">
+</head>
+<body>
+  <canvas id="particles" style="z-index:0;"></canvas>
+  <div class="soft-overlay"></div>
+
+  <header class="topbar">
+    <div class="brand">Parv</div>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#responsibilities">Responsibilities</a>
+    </nav>
+    <a class="back" href="index.html">Back</a>
+  </header>
+
+  <main class="portfolio">
+    <section class="hero-card reveal">
+      <div class="hero-card-left">
+        <h2>Parv Nagpal</h2>
+        <p class="muted">Tech professional driving innovation through software development, system optimization, and collaborative problem-solving.</p>
+        <div class="pills">
+          <span>Python</span><span>C++</span><span>Web</span><span>NumPy</span>
+        </div>
+      </div>
+      <div class="hero-card-right">
+        <img src="k.PNG" alt="parv" class="round">
+      </div>
+    </section>
+
+    <section id="about" class="glass reveal neon-border">
+      <h3>About Me</h3>
+      <p>
+        Tech professional driving innovation through software development,
+        system optimization, and collaborative problem-solving.
+        Specialisation in <b>Python</b>, <b>C++</b>, <b>C</b>, <b>NumPy</b>, <b>Web Development</b>.
+        I can write efficient and optimized code.
+      </p>
+    </section>
+
+    <section id="education" class="glass reveal">
+      <h3>Educational Qualifications</h3>
+      <ul>
+        <li>Matriculation – CBSE – 98%</li>
+        <li>Senior Secondary – CBSE – 91.2%</li>
+        <li>B.Tech – Dr. B.R. Ambedkar NIT Jalandhar – ECE</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="glass reveal">
+      <h3>Projects</h3>
+      <article class="proj">
+        <h4>C++ Project: Smart Traffic Light System</h4>
+        <ul>
+          <li>Designed a real-time traffic controller using OOP + multithreading.</li>
+          <li>Integrated SQLite and optimized data handling.</li>
+        </ul>
+      </article>
+
+      <article class="proj">
+        <h4>Java Project: Personal Finance Tracker</h4>
+        <ul>
+          <li>Built an Android app for expense tracking and budget planning.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="achievements" class="glass reveal">
+      <h3>Achievements</h3>
+      <ul>
+        <li>Completed Class 10 with 98%</li>
+        <li>Completed Class 12 (Science) with 91.2%</li>
+        <li>Cleared JEE Main with 98.9 percentile</li>
+        <li>Qualified JEE Advanced with AIR ~21,000</li>
+      </ul>
+    </section>
+
+    <section class="glass reveal">
+      <h3>Internships</h3>
+      <ul>
+        <li>Interned at Apple Inc. (2 months)</li>
+        <li>Interned at Google (3 weeks)</li>
+      </ul>
+    </section>
+
+    <section id="responsibilities" class="glass reveal">
+      <h3>Responsibilities</h3>
+      <ul>
+        <li>Managed freshers at NIT Jalandhar</li>
+        <li>Organised AI/ML workshops during 2nd year</li>
+      </ul>
+    </section>
+
+    <section class="glass reveal">
+      <h3>Personal Data Table</h3>
+      <img src="20250407.jpg" alt="friend" class="wide">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Name</th><th>DOB</th><th>Blood Group</th><th>Father Name</th><th>Mother Name</th><th>Father Occupation</th><th>Mother Occupation</th><th>Contact</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Parv</td><td>15-12-2006</td><td>B+</td><td>Bhuvnesh Kumar</td><td>Kiran Bala</td><td>Business</td><td>Housewife</td><td>836xxxxxx</td></tr>
+            <tr><td>Bhuvnesh Kumar</td><td>26-08-1989</td><td>B+</td><td>Satish Kumar</td><td>Sunita Rani</td><td>Business</td><td>Housewife</td><td>836xxxxxx</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="glass reveal">
+      <h3>Login Form</h3>
+      <form>
+        <input type="text" placeholder="enter user id">
+        <input type="password" placeholder="enter password">
+        <input type="submit" value="Login">
+      </form>
+    </section>
+
+    <footer class="foot">© Parv — Light Cyber Portfolio</footer>
+  </main>
+
+  <script>
+    // reveal on scroll
+    const obs = new IntersectionObserver((entries)=> {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(n=>obs.observe(n));
+  </script>
+</body>
+</html>
