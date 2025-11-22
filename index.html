@@ -1,154 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Parv — Light Cyber (Peach & Teal)</title>
-  <link rel="stylesheet" href="light-cyber.css">
+  <title>Parv — Landing (Cyberpunk)</title>
+  <link rel="stylesheet" href="cyber.css">
 </head>
 <body>
-  <!-- soft particle canvas -->
-  <canvas id="particles"></canvas>
+  <!-- neon blobs / background -->
+  <div class="neon-bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
 
-  <!-- subtle scanline / texture -->
-  <div class="soft-overlay"></div>
-
-  <main class="hero-wrap">
+  <main class="hero-split">
     <section class="hero-left">
-      <h1 class="title">
-        <span class="big">Parv</span>
-        <span class="small">Nagpal</span>
-        <span class="glitch" aria-hidden="true">PARV</span>
+      <h1 class="name">
+        <span class="glow-big">Parv</span>
+        <span class="glow-small">Nagpal</span>
       </h1>
 
-      <div class="typing-area">
-        <div id="typing" class="typing">Engineer • Coder • Builder</div>
+      <div class="subtitle-wrap">
+        <div id="typing" class="typing"></div>
       </div>
-
-      <p class="lead">
-        Performance-minded dev building efficient systems and polished interfaces.
-        I focus on readable, efficient code and delightful UX.
-      </p>
-
-      <div class="action-row">
-        <a class="btn enter" href="portfolio.html">ENTER PORTFOLIO</a>
-        <a class="btn ghost" href="/ABOUTME.html" target="_blank">Open Raw</a>
-      </div>
+            </div>
       <!-- SOCIAL LINKS -->
       <div class="social-row">
-        <a href="https://github.com/YOUR_GITHUB" target="_blank" class="social-btn github">
+        <a href="https://github.com/nagpal227" target="_blank" class="social-btn github">
             <svg viewBox="0 0 24 24">
                 <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.45 7.9 10.98.6.1.82-.26.82-.58v-2.02c-3.22.7-3.9-1.4-3.9-1.4-.55-1.4-1.34-1.77-1.34-1.77-1.1-.76.08-.75.08-.75 1.22.1 1.86 1.28 1.86 1.28 1.1 1.87 2.88 1.33 3.58 1.02.1-.8.44-1.33.8-1.64-2.57-.28-5.28-1.3-5.28-5.8 0-1.28.46-2.32 1.22-3.14-.12-.3-.54-1.52.12-3.17 0 0 1.02-.33 3.34 1.2a11.5 11.5 0 0 1 6.08 0c2.3-1.53 3.32-1.2 3.32-1.2.66 1.65.24 2.87.12 3.17.76.82 1.22 1.86 1.22 3.14 0 4.52-2.72 5.5-5.3 5.78.46.4.88 1.2.88 2.42v3.58c0 .32.22.7.82.58A10.99 10.99 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
             </svg>
         </a>
 
-        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="social-btn linkedin">
+        <a href="https://www.linkedin.com/in/parv-nagpal-b776a2352/" target="_blank" class="social-btn linkedin">
             <svg viewBox="0 0 24 24">
                 <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25h4.5v15.01h-4.5zm7.4 0h4.31v2.05h.06c.6-1.14 2.04-2.33 4.21-2.33 4.5 0 5.33 2.96 5.33 6.8v8.5h-4.5v-7.53c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.89 1.95-2.89 3.97v7.66h-4.5z"/>
             </svg>
         </a>
-</div>
+      </div>
 
+      <p class="short">
+        Tech professional — performance-minded developer who builds efficient systems and elegant code.
+      </p>
 
-      <div class="skill-row">
-        <span>Python</span><span>C++</span><span>Web</span><span>NumPy</span>
+      <div class="cta-row">
+        <a class="enter neon-btn" href="portfolio.html" id="enterBtn">ENTER PORTFOLIO</a>
+        <a class="resume-link" href="ABOUTME.html" title="Open original uploaded ABOUTME.html">Original (raw)</a>
+      </div>
+
+      <div class="notes">
+        <span class="tag">Python</span>
+        <span class="tag">C++</span>
+        <span class="tag">Web</span>
+        <span class="tag">NumPy</span>
       </div>
     </section>
 
-    <section class="hero-right" id="parallax">
-      <div class="photo-3d" id="photo3d">
-        <img src="k.PNG" alt="Parv" draggable="false">
-        <div class="rim"></div>
+    <section class="hero-right" id="parallaxWrap">
+      <!-- USING YOUR UPLOADED IMAGE PATH -->
+      <div class="photo-frame" id="photoFrame">
+        <img src="k.PNG" alt="Parv photo">
+        <div class="photo-glow"></div>
       </div>
     </section>
   </main>
 
-  <footer class="hero-foot">Move the cursor on the image to feel the depth — click ENTER to view full profile.</footer>
+  <footer class="mini-footer">
+    <small>Move your mouse on the image for a subtle parallax — click ENTER to view full profile.</small>
+  </footer>
 
-  <!-- scripts: typing, parallax tilt, particles -->
+  <!-- small inline scripts: typing + parallax -->
   <script>
-  // TYPING effect
-  (function(){
-    const lines = [
-      "Realtime systems • Optimized code • Clean architecture",
-      "Python · C++ · Web Development · NumPy",
-      "I build, I optimize, I ship."
-    ];
-    const el = document.getElementById('typing');
-    let i=0, chr=0, dir=1, delay=900;
-    function tick(){
-      const line = lines[i];
-      chr += dir;
-      el.textContent = line.slice(0, Math.max(0,chr)) + (Math.random()>0.6 ? "▌":" ");
-      if(chr === line.length+1){ dir=-1; setTimeout(tick, delay); return;}
-      if(chr === 0 && dir===-1){ dir=1; i=(i+1)%lines.length; }
-      setTimeout(tick, 45);
-    }
-    tick();
-  })();
+    // TYPING effect (simple)
+    (function(){
+      const lines = [
+        "Engineer • Coder • Builder",
+        "Realtime systems • Optimized code • Clean architecture",
+        "Python · C++ · Web Development · NumPy"
+      ];
+      const el = document.getElementById('typing');
+      let i = 0, char = 0, direction = 1, wait = 1200;
 
-  // PARALLAX / TILT for photo
-  (function(){
-    const wrap = document.getElementById('parallax');
-    const photo = document.getElementById('photo3d');
-    function onMove(e){
-      const r = wrap.getBoundingClientRect();
-      const cx = r.left + r.width/2;
-      const cy = r.top + r.height/2;
-      const dx = (e.clientX - cx)/r.width;
-      const dy = (e.clientY - cy)/r.height;
-      photo.style.transform = `rotateY(${dx*6}deg) rotateX(${ -dy*6 }deg) translate3d(${dx*10}px, ${dy*8}px, 0)`;
-    }
-    document.addEventListener('pointermove', onMove);
-    wrap.addEventListener('pointerleave', ()=> photo.style.transform = 'translate3d(0,0,0)');
-  })();
+      function step() {
+        const line = lines[i];
+        char += direction;
+        el.textContent = line.slice(0, char) + (char % 2 ? "|" : "");
+        if (char === line.length + 1) {
+          direction = -1;
+          setTimeout(step, wait);
+        } else if (char === 0 && direction === -1) {
+          direction = 1;
+          i = (i + 1) % lines.length;
+        }
+        setTimeout(step, 60);
+      }
+      step();
+    })();
 
-  // PARTICLES canvas (soft pastel)
-  (function(){
-    const c = document.getElementById('particles'), ctx = c.getContext('2d');
-    let W, H, particles = [];
-    function resize(){ W = c.width = innerWidth; H = c.height = innerHeight; }
-    addEventListener('resize', resize);
-    function rand(a,b){ return a + Math.random()*(b-a); }
-    function setup(){
-      particles = [];
-      const n = Math.floor((W*H)/140000) + 22;
-      for(let i=0;i<n;i++){
-        particles.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          r: rand(0.6,3.2),
-          vx: rand(-0.24,0.4),
-          vy: rand(-0.12,0.12),
-          hue: 15 + Math.random()*160 // warm-peach to teal range
-        });
-      }
-    }
-    function draw(){
-      ctx.clearRect(0,0,W,H);
-      for(const p of particles){
-        p.x += p.vx; p.y += p.vy;
-        if(p.x > W+40) p.x = -40;
-        if(p.x < -40) p.x = W+40;
-        if(p.y > H+40) p.y = -40;
-        if(p.y < -40) p.y = H+40;
-        const grd = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*8);
-        // pastel gradient: peach -> mint -> teal
-        const h = p.hue;
-        grd.addColorStop(0, `hsla(${h},80%,70%,0.18)`);
-        grd.addColorStop(1, `hsla(${h+30},70%,60%,0)`);
-        ctx.fillStyle = grd;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r*6,0,Math.PI*2);
-        ctx.fill();
-      }
-      requestAnimationFrame(draw);
-    }
-    resize(); setup(); draw();
-    // re-setup on big resize (debounced-ish)
-    let last = performance.now();
-    addEventListener('resize', ()=> { if(performance.now()-last>80){ setup(); last = performance.now(); }});
-  })();
+    // PARALLAX on photo (subtle)
+    (function(){
+      const wrap = document.getElementById('parallaxWrap');
+      const frame = document.getElementById('photoFrame');
+      document.addEventListener('pointermove', (e) => {
+        const rect = wrap.getBoundingClientRect();
+        const cx = rect.left + rect.width/2;
+        const cy = rect.top + rect.height/2;
+        const dx = (e.clientX - cx) / rect.width;
+        const dy = (e.clientY - cy) / rect.height;
+        frame.style.transform = `translate3d(${dx * 16}px, ${dy * 12}px, 0) rotate(${dx * 3}deg)`;
+      });
+      // small floating animation
+      setInterval(()=> {
+        frame.style.transition = 'transform 0.9s cubic-bezier(.22,.9,.35,1)';
+        setTimeout(()=> frame.style.transition = '', 1000);
+      }, 4000);
+    })();
   </script>
 </body>
 </html>

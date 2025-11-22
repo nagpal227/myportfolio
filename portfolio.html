@@ -1,17 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Parv — Portfolio (Light Cyber)</title>
-  <link rel="stylesheet" href="light-cyber.css">
+  <title>Parv — Portfolio (Full)</title>
+  <link rel="stylesheet" href="cyber.css">
 </head>
 <body>
-  <canvas id="particles" style="z-index:0;"></canvas>
-  <div class="soft-overlay"></div>
+  <div class="neon-bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
 
-  <header class="topbar">
-    <div class="brand">Parv</div>
+  <header class="topnav">
+    <div class="brand">
+      <div class="logo-dot"></div>
+      <span>Parv</span>
+    </div>
     <nav class="navlinks">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -19,24 +25,26 @@
       <a href="#achievements">Achievements</a>
       <a href="#responsibilities">Responsibilities</a>
     </nav>
-    <a class="back" href="index.html">Back</a>
+    <a class="mini-enter" href="index.html">⟵ Back</a>
   </header>
 
-  <main class="portfolio">
-    <section class="hero-card reveal">
-      <div class="hero-card-left">
+  <main class="portfolio-wrap">
+    <!-- HERO SUMMARY -->
+    <section class="summary-card">
+      <div class="summary-left">
         <h2>Parv Nagpal</h2>
         <p class="muted">Tech professional driving innovation through software development, system optimization, and collaborative problem-solving.</p>
-        <div class="pills">
-          <span>Python</span><span>C++</span><span>Web</span><span>NumPy</span>
+        <div class="pill-group">
+          <span>Python</span><span>C++</span><span>Web Dev</span><span>NumPy</span>
         </div>
       </div>
-      <div class="hero-card-right">
-        <img src="k.PNG" alt="parv" class="round">
+      <div class="summary-right">
+        <img src="k.PNG" alt="Parv" class="round-photo">
       </div>
     </section>
 
-    <section id="about" class="glass reveal neon-border">
+    <!-- ABOUT -->
+    <section id="about" class="glass-card neon-border">
       <h3>About Me</h3>
       <p>
         Tech professional driving innovation through software development,
@@ -46,7 +54,8 @@
       </p>
     </section>
 
-    <section id="education" class="glass reveal">
+    <!-- EDUCATION -->
+    <section id="education" class="glass-card">
       <h3>Educational Qualifications</h3>
       <ul>
         <li>Matriculation – CBSE – 98%</li>
@@ -55,25 +64,27 @@
       </ul>
     </section>
 
-    <section id="projects" class="glass reveal">
+    <!-- PROJECTS -->
+    <section id="projects" class="glass-card">
       <h3>Projects</h3>
-      <article class="proj">
+      <div class="project">
         <h4>C++ Project: Smart Traffic Light System</h4>
         <ul>
           <li>Designed a real-time traffic controller using OOP + multithreading.</li>
           <li>Integrated SQLite and optimized data handling.</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="proj">
+      <div class="project">
         <h4>Java Project: Personal Finance Tracker</h4>
         <ul>
           <li>Built an Android app for expense tracking and budget planning.</li>
         </ul>
-      </article>
+      </div>
     </section>
 
-    <section id="achievements" class="glass reveal">
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="glass-card">
       <h3>Achievements</h3>
       <ul>
         <li>Completed Class 10 with 98%</li>
@@ -83,7 +94,8 @@
       </ul>
     </section>
 
-    <section class="glass reveal">
+    <!-- INTERNSHIPS -->
+    <section class="glass-card">
       <h3>Internships</h3>
       <ul>
         <li>Interned at Apple Inc. (2 months)</li>
@@ -91,7 +103,8 @@
       </ul>
     </section>
 
-    <section id="responsibilities" class="glass reveal">
+    <!-- RESPONSIBILITIES -->
+    <section id="responsibilities" class="glass-card">
       <h3>Responsibilities</h3>
       <ul>
         <li>Managed freshers at NIT Jalandhar</li>
@@ -99,9 +112,10 @@
       </ul>
     </section>
 
-    <section class="glass reveal">
+    <!-- TABLE -->
+    <section class="glass-card">
       <h3>Personal Data Table</h3>
-      <img src="20250407.jpg" alt="friend" class="wide">
+      <img src="20250407.jpg" alt="photo with friend" class="wide-photo">
       <div class="table-wrap">
         <table>
           <thead>
@@ -115,24 +129,30 @@
       </div>
     </section>
 
-    <section class="glass reveal">
+    <!-- FORM -->
+    <section class="glass-card">
       <h3>Login Form</h3>
       <form>
-        <input type="text" placeholder="enter user id">
-        <input type="password" placeholder="enter password">
+        <input type="text" name="userid" placeholder="enter user id">
+        <input type="password" name="pin" placeholder="enter password">
         <input type="submit" value="Login">
       </form>
     </section>
 
-    <footer class="foot">© Parv — Light Cyber Portfolio</footer>
+    <footer class="foot-note">
+      <small>Built with neon glass — parallax, gradients & animated reveal. © Parv</small>
+    </footer>
   </main>
 
+  <!-- small script: fade-in on scroll -->
   <script>
-    // reveal on scroll
-    const obs = new IntersectionObserver((entries)=> {
-      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-    }, {threshold:0.12});
-    document.querySelectorAll('.reveal').forEach(n=>obs.observe(n));
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('entered');
+      });
+    }, {threshold: 0.12});
+
+    document.querySelectorAll('.glass-card, .summary-card').forEach(n => observer.observe(n));
   </script>
 </body>
 </html>
